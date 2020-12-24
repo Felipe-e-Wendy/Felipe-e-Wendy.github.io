@@ -1,11 +1,108 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Casamento de Felipe e Wendy</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 </head>
+
 <body>
-    <h1>Casamento de Felipe e Wendy</h1>
+    <div id="top">
+        <h1>Casamento de Felipe e Wendy</h1>
+    </div>
+    <div id="resumo">
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas commodo nisl tellus, quis rutrum risus
+            pretium
+            ut. Sed rutrum ut metus vitae tempor. Sed interdum auctor leo, et iaculis dui convallis nec. Nullam id
+            vehicula
+            purus, ac vulputate lectus. Proin ut pulvinar ante, nec scelerisque erat. Aliquam gravida nunc non velit
+            congue
+            interdum. Vestibulum ultrices arcu vitae magna feugiat, sit amet vehicula purus tristique. Curabitur quis ex
+            blandit purus lacinia suscipit sed at tortor. Duis at fermentum nisl. Morbi neque enim, laoreet at metus
+            volutpat, egestas congue tortor. Ut enim est, tincidunt vel consectetur luctus, ultricies ac tortor. Donec
+            nibh
+            tortor, laoreet non congue sed, molestie at libero. Etiam euismod condimentum lacus nec pulvinar.
+        </p>
+    </div>
+
+    <div class="mb-3" id="leftPanel">
+        <p id="obrigado">
+            Muito Obrigado!
+        </p>
+        <p id="secundarioObrigado">
+            Você e sua família nos ajudaram a comprar
+        </p>
+        <p>
+            <span id="perc"> 3%</span> de um(a)
+            <span id="item"> Geladeira</span> !!!
+        </p>
+
+    </div>
+
+    <form id="myForm">
+        <div class="mb-3">
+            <label for="nome" class="form-label">Nome:</label>
+            <input type="text" id="nome" name="name" class="form-control" maxlength="50" required />
+        </div>
+        <div class="mb-3">
+            <label for="wpp" class="form-label">WhatsApp:</label>
+            <input type="tel" id="wpp" name="wpp" class="form-control" maxlength="15" pattern="\(\d{2}\)\s*\d{5}-\d{4}"
+                placeholder="(92) 99999-9999" required>
+        </div>
+
+
+        <div class="mb-3">
+            <label for="price" class="form-label">Valor doado:</label>
+            <div>
+                <div class="form-check-inline align-top">
+                    <div class="form-check form-check-inline">
+                        <input type="radio" class="btn-check" name="price" id="price1" value="1" required>
+                        <label class="btn btn-outline-secondary" for="price1" id="labelPrice1"></label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input type="radio" class="btn-check" name="price" id="price2" value="2">
+                        <label class="btn btn-outline-secondary" for="price2" id="labelPrice2"></label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input type="radio" class="btn-check" name="price" id="price3" value="3">
+                        <label class="btn btn-outline-secondary" for="price3" id="labelPrice3"></label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input type="radio" class="btn-check" name="price" id="price4" value="4">
+                        <label class="btn btn-outline-secondary" for="price4" id="labelPrice4"></label>
+                    </div>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input type="radio" name="price" id="price5" style="visibility:hidden"  value="5">
+                    <div class="form-check-inline">
+                        <input class="form-check-inline form-control" id="valuePrice5" type="text"
+                            value="R$ " />​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​
+                        <div class="form-check-inline form-text align-top">Apenas valores maiores que R$ 100 serão
+                            contabilizados</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="mb-3">
+            <label for="msg" class="form-label">Mensagem:</label>
+            <textarea id="msg" name="msg" maxlength="140" class="form-control"></textarea>
+            <div class="form-text" id="cont">140</div>
+        </div>
+        <div id=sendForm class="btn btn-primary">Enviar sua mensagem</div>
+    </form>
+
 </body>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+    crossorigin="anonymous"></script>
+<script src="index.js"></script>
+
 </html>
