@@ -60,7 +60,7 @@
             <div>
                 <div class="form-check-inline align-top">
                     <div class="form-check form-check-inline">
-                        <input type="radio" class="btn-check" name="price" id="price1" value="1" required>
+                        <input type="radio" class="btn-check" name="price" id="price1" value="1" required checked>
                         <label class="btn btn-outline-secondary" for="price1" id="labelPrice1"></label>
                     </div>
                     <div class="form-check form-check-inline">
@@ -77,12 +77,12 @@
                     </div>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input type="radio" name="price" id="price5" style="visibility:hidden"  value="5">
+                    <input type="radio" name="price" id="price5" style="visibility:hidden" value="5">
                     <div class="form-check-inline">
                         <input class="form-check-inline form-control" id="valuePrice5" type="text"
                             value="R$ " />​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​
-                        <div class="form-check-inline form-text align-top">Apenas valores maiores que R$ 100 serão
-                            contabilizados</div>
+                        <div class="form-check-inline form-text align-top">Apenas valores maiores que R$<span id="minPrice"></span> serão
+                            divulgados no telão</div>
                     </div>
                 </div>
             </div>
@@ -95,10 +95,26 @@
             <textarea id="msg" name="msg" maxlength="140" class="form-control"></textarea>
             <div class="form-text" id="cont">140</div>
         </div>
-        <div id=sendForm class="btn btn-primary">Enviar sua mensagem</div>
+
+        <div class="g-recaptcha" data-callback='check_captcha' data-sitekey="6LdAsBMaAAAAAMyYJP4BURKzdrRW83vkUY8gzcJJ"></div>
+
+
+        
+        </div>
+
+        <div id="buttonArea">
+            <button  id="sendForm" class="btn btn-primary" type="button" disabled>
+                <span id="spinnerForm" class="spinner-border spinner-border-sm" role="status" aria-hidden="true" style="visibility:hidden"></span>
+                Enviar sua mensagem
+              </button>
+                    
+        </div>
+        
+
     </form>
 
 </body>
+<script src="https://www.google.com/recaptcha/api.js"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"

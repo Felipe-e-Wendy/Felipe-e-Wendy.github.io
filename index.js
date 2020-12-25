@@ -42,11 +42,8 @@ const check_other_value = (valor) => {
 
 }
 
-
 const sendForm = document.getElementById('sendForm');
 sendForm.addEventListener('click', (e) => send_form(e.target.value))
-
-
 
 const priceTable = {
     "1": 80,
@@ -54,6 +51,8 @@ const priceTable = {
     "3": 220,
     "4": 340,
 }
+
+document.getElementById("minPrice").textContent = priceTable["1"];
 
 for (const key in priceTable) {
     if (Object.hasOwnProperty.call(priceTable, key)) {
@@ -78,13 +77,18 @@ const parse_request = () => {
     }
 
     data["wpp"] = data["wpp"].replace(/\D/g, "");
+
+    data["token"] = userToken 
     return data
 }
 
 
 const send_form = (value) => {
+    const spinnerForm =  document.getElementById("spinnerForm")
+    spinnerForm.style.visibility = "visible"
     const data = parse_request()
-    fetch('https://felipe-e-wendy.herokuapp.com/data', {
+    console.log(data)
+    fetch('https://felipe-e-wendy.herokuapp.com/data/', {
         method: 'POST',
         body: JSON.stringify(data),
         headers: {
@@ -92,8 +96,10 @@ const send_form = (value) => {
         }
     }).then((response) => {
         if (response.ok) {
+            spinnerForm.style.visibility = "hidden"
             return response.json();
         }
+        
         return Promise.reject(response);
     }).then((data) => {
         console.log(data);
@@ -105,3 +111,41 @@ const send_form = (value) => {
 
 }
 
+
+var captcha = false
+var userToken = -1
+
+const can_submit = () => { document.getElementById('sendForm').disabled = !(true & captcha)}
+const cannot_submit = () => { document.getElementById('sendForm').disabled = true }
+
+const buttonArea = document.getElementById("buttonArea");
+buttonArea.addEventListener('mouseover', (e) => validate_data())
+
+function check_captcha (token){
+    captcha = true
+    can_submit()
+    userToken = token
+}
+
+const validate_data = () => {
+    const data = parse_request()
+    const name = document.getElementById('nome');
+    const wpp = document.getElementById('wpp');
+    if (data["name"]) {
+        name.className = name.className.replace(" is-invalid", "")
+        can_submit()
+    } else {
+        name.className = name.className + " is-invalid"
+        cannot_submit()
+        return
+    }
+
+    if (data["wpp"] > 9999999999) {
+        wpp.className = wpp.className.replace(" is-invalid", "")
+        can_submit()
+    } else {
+        wpp.className = wpp.className + " is-invalid"
+        cannot_submit()
+        return
+    }
+}
