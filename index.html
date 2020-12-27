@@ -45,8 +45,8 @@
 
     <form id="myForm">
         <div class="mb-3">
-            <label for="nome" class="form-label">Nome:</label>
-            <input type="text" id="nome" name="name" class="form-control" maxlength="50" required />
+            <label for="name" class="form-label">Nome:</label>
+            <input type="text" id="name" name="name" class="form-control" maxlength="50" required />
         </div>
         <div class="mb-3">
             <label for="wpp" class="form-label">WhatsApp:</label>
@@ -79,9 +79,10 @@
                 <div class="form-check form-check-inline">
                     <input type="radio" name="price" id="price5" style="visibility:hidden" value="5">
                     <div class="form-check-inline">
-                        <input class="form-check-inline form-control" id="valuePrice5" type="text"
+                        <input class="form-check-inline form-control" id="price" type="text"
                             value="R$ " />​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​
-                        <div class="form-check-inline form-text align-top">Apenas valores maiores que R$<span id="minPrice"></span> serão
+                        <div class="form-check-inline form-text align-top">Apenas valores maiores que R$<span
+                                id="minPrice"></span> serão
                             divulgados no telão</div>
                     </div>
                 </div>
@@ -96,20 +97,21 @@
             <div class="form-text" id="cont">140</div>
         </div>
 
-        <div class="g-recaptcha" data-callback='check_captcha' data-sitekey="6LdAsBMaAAAAAMyYJP4BURKzdrRW83vkUY8gzcJJ"></div>
-
-
-        
+        <div id="recaptchaArea" class="mb-3">
+            <div id="token" class="g-recaptcha mb-3" data-sitekey="6LdAsBMaAAAAAMyYJP4BURKzdrRW83vkUY8gzcJJ"></div>
         </div>
+
+
 
         <div id="buttonArea">
-            <button  id="sendForm" class="btn btn-primary" type="button" disabled>
-                <span id="spinnerForm" class="spinner-border spinner-border-sm" role="status" aria-hidden="true" style="visibility:hidden"></span>
+            <button id="sendForm" class="btn btn-primary" type="button">
+                <span id="spinnerForm" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"
+                    style="visibility:hidden"></span>
                 Enviar sua mensagem
-              </button>
-                    
+            </button>
+
         </div>
-        
+
 
     </form>
 
