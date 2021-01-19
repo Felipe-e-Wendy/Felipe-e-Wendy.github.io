@@ -1,126 +1,256 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Casamento de Felipe e Wendy</title>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="index.css">
+
+    <title>Felipe & Wendy</title>
 </head>
 
 <body>
-    <div id="top">
-        <h1>Casamento de Felipe e Wendy</h1>
-    </div>
-    <div id="resumo">
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas commodo nisl tellus, quis rutrum risus
-            pretium
-            ut. Sed rutrum ut metus vitae tempor. Sed interdum auctor leo, et iaculis dui convallis nec. Nullam id
-            vehicula
-            purus, ac vulputate lectus. Proin ut pulvinar ante, nec scelerisque erat. Aliquam gravida nunc non velit
-            congue
-            interdum. Vestibulum ultrices arcu vitae magna feugiat, sit amet vehicula purus tristique. Curabitur quis ex
-            blandit purus lacinia suscipit sed at tortor. Duis at fermentum nisl. Morbi neque enim, laoreet at metus
-            volutpat, egestas congue tortor. Ut enim est, tincidunt vel consectetur luctus, ultricies ac tortor. Donec
-            nibh
-            tortor, laoreet non congue sed, molestie at libero. Etiam euismod condimentum lacus nec pulvinar.
-        </p>
-    </div>
+    <div class="container-sm" id="container">
+        <div class="container-sm" id="topAssets">
 
-    <div class="mb-3" id="leftPanel">
-        <p id="obrigado">
-            Muito Obrigado!
-        </p>
-        <p id="secundarioObrigado">
-            Você e sua família nos ajudaram a comprar
-        </p>
-        <p>
-            <span id="perc"> 3%</span> de um(a)
-            <span id="item"> Geladeira</span> !!!
-        </p>
-
-    </div>
-
-    <form id="myForm">
-        <div class="mb-3">
-            <label for="name" class="form-label">Nome:</label>
-            <input type="text" id="name" name="name" class="form-control" maxlength="50" required />
         </div>
-        <div class="mb-3">
-            <label for="wpp" class="form-label">WhatsApp:</label>
-            <input type="tel" id="wpp" name="wpp" class="form-control" maxlength="15" pattern="\(\d{2}\)\s*\d{5}-\d{4}"
-                placeholder="(92) 99999-9999" required>
+        <div class="container-sm text-center" id="nomeCasal">
+            <h1>Felipe & Wendy</h1>
         </div>
 
+        <div class="secao container-sm text-center" id="nossaHistoria">
+            <div id="assetCasal container-sm"></div>
+            <h2>Nossa História</h2>
+            <div id="assetPlanta"></div>
 
-        <div class="mb-3">
-            <label for="price" class="form-label">Valor doado:</label>
-            <div>
-                <div class="form-check-inline align-top">
-                    <div class="form-check form-check-inline">
-                        <input type="radio" class="btn-check" name="price" id="price1" value="1" required checked>
-                        <label class="btn btn-outline-secondary" for="price1" id="labelPrice1"></label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input type="radio" class="btn-check" name="price" id="price2" value="2">
-                        <label class="btn btn-outline-secondary" for="price2" id="labelPrice2"></label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input type="radio" class="btn-check" name="price" id="price3" value="3">
-                        <label class="btn btn-outline-secondary" for="price3" id="labelPrice3"></label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input type="radio" class="btn-check" name="price" id="price4" value="4">
-                        <label class="btn btn-outline-secondary" for="price4" id="labelPrice4"></label>
-                    </div>
+            <div class="caixaTexto container-sm">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ut elit sit amet erat sagittis
+                    volutpat a et turpis. Etiam scelerisque porta nunc, ut sollicitudin purus scelerisque vel. Etiam id
+                    ligula id lorem suscipit dignissim eu in lacus. Donec id pharetra dolor. Nullam laoreet quam
+                    volutpat, ornare nunc vel, dignissim ligula. Praesent magna nisi, bibendum vel egestas at, gravida
+                    congue neque.</p>
+            </div>
+        </div>
+
+        <div class="secao container-sm text-center" id="nossoCasamento">
+            <h2> Nosso Casamento </h2>
+            <div class="caixaTexto container-sm">
+                <div id="quando">
+                    <h3>23 de Agosto de 2021</h3>
+                    <p>ás 16 horas, horário de Manaus</p>
                 </div>
-                <div class="form-check form-check-inline">
-                    <input type="radio" name="price" id="price5" style="visibility:hidden" value="5">
-                    <div class="form-check-inline">
-                        <input class="form-check-inline form-control" id="price" type="text"
-                            value="R$ " />​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​
-                        <div class="form-check-inline form-text align-top">Apenas valores maiores que R$<span
-                                id="minPrice"></span> serão
-                            divulgados no telão</div>
+
+                <div id="local">
+                    <div id="endereco">
+                        <h3>Chácara Monte Rey</h3>
+                        <p>Nº 450, Vila Tredecim - Tarumão Açu, Manaus - AM</p>
+                        <div id="google-calendar">
+                            <a target="_blank"
+                                href="https://calendar.google.com/event?action=TEMPLATE&amp;tmeid=NGE4OWZ0NGVoZnNtdWFnaDJycXJhNzYzcmIgZm1hcmtzb25AbQ&amp;tmsrc=fmarkson%40gmail.com"><img
+                                    border="0"
+                                    src="https://www.google.com/calendar/images/ext/gc_button1_pt-BR.gif"></a>
+                        </div>
+                    </div>
+
+                    <div id="google-maps">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3984.484933099095!2d-60.10235718571582!3d-2.9628592405872407!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x926c3df421b35a11%3A0xdc386916479258b8!2sCh%C3%A1cara%20Monte%20Rey!5e0!3m2!1spt-BR!2sbr!4v1611004634514!5m2!1spt-BR!2sbr"
+                            width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen=""
+                            aria-hidden="false" tabindex="0"></iframe>
                     </div>
                 </div>
             </div>
         </div>
 
+        <div class="secao container-sm text-center" id="medidasSegurança">
+            <h2>Medidas de Segurança</h2>
+            <div class="caixaTexto">
+                <p>Para a segurança de todos os convidados, seguiremos obrigatoriamente as medidas de prevenção à
+                    COVID-19:
+                </p>
 
+                <p>Uso obrigatório de máscara durante todo o evento, com exeção do momento de refeição.</p>
 
-        <div class="mb-3">
-            <label for="msg" class="form-label">Mensagem:</label>
-            <textarea id="msg" name="msg" maxlength="140" class="form-control"></textarea>
-            <div class="form-text" id="cont">140</div>
+                <p>Distânciamento maior que 1 metro entre pessoas que não dividem residência.</p>
+
+                <p>Respeito à ordenação do acesso ao buffet.</p>
+
+                <p>Não compartilhamento de objetos de uso pessoal (talheres, pratos, copos, etc.).</p>
+
+                <a href="https://coronavirus.saude.gov.br/sobre-a-doenca#como-se-proteger" type="button"
+                    class="btn btn-primary align-self-center" role="button" target="_blank"
+                    rel="noopener noreferrer">Mais
+                    informações</a>
+            </div>
         </div>
 
-        <div id="recaptchaArea" class="mb-3">
-            <div id="token" class="g-recaptcha mb-3" data-sitekey="6LdAsBMaAAAAAMyYJP4BURKzdrRW83vkUY8gzcJJ"></div>
+        <div class="secao mb-3 container-sm" id="Lista Presente">
+            <h2 class="text-center">Lista de Presentes</h2>
+            <div class="caixaTexto">
+                <div class="container-sm text-center">
+                    <p>Abaixo está a forma que encontramos para que todos possam ajudar a construir os próximos passos
+                        de
+                        nossa história.</p>
+
+                    <p>Aas mensagens serão exibidas durante o casamento.*</p>
+                </div>
+
+
+                <form class="container-sm" name="myForm" data-bs-interval="1">
+
+                    <div class="mb-3">
+                        <label for="nome" class="form-label" name="nome">Nome</label>
+                        <input type="text" class="form-control" id="nome" placeholder="Ex.: José Silva" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="wpp" class="form-label" name="wpp">WhatsApp</label>
+                        <input type="text" class="form-control" placeholder="Ex.: (00) 00000-0000" required>
+                    </div>
+
+                    <div class="mb-3 h-100">
+                        <p>Você nos ajudou a comprar: </p>
+
+                        <div id="carouselExampleControls" class="mb-3 carousel carousel-dark slide row"
+                            data-bs-ride="carousel" data-bs-interval="100000000000">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <div class="row text-center align-items-center">
+                                        <div class="col item-lista">
+                                            <img src="assets\geladeira.svg" class="d-block w-100" alt="Geladeira">
+                                        </div>
+                                        <div class="col">
+                                            <p class="percDomestico" id="percGeladeira">100 %</p>
+                                            <p>de nossa Geladeira</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="carousel-item">
+                                    <div class="row text-center align-items-center">
+                                        <div class="col item-lista">
+                                            <img src="assets\fogao.svg" class="d-block w-100" alt="Fogão">
+                                        </div>
+                                        <div class="col">
+                                            <p class="percDomestico" id="percFogao">100 %</p>
+                                            <p>de nosso Fogão</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="carousel-item">
+                                    <div class="row text-center align-items-center">
+                                        <div class="col item-lista">
+                                            <img src="assets\maqlavar.svg" class="d-block w-100" alt="Maquina de Lavar">
+                                        </div>
+                                        <div class="col">
+                                            <p class="percDomestico" id="percMaqLavar">100 %</p>
+                                            <p>de nossa Maquina de lavar</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="carousel-item">
+                                    <div class="row text-center align-items-center">
+                                        <div class="col item-lista">
+                                            <img src="assets\tv.svg" class="d-block w-100" alt="Televisão">
+                                        </div>
+                                        <div class="col">
+                                            <p class="percDomestico" id="percTelevisao">100 %</p>
+                                            <p>de nossa Televisão</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a class="carousel-control-prev" href="#carouselExampleControls" role="button"
+                                data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Anterior</span>
+                            </a>
+
+                            <a class="carousel-control-next" href="#carouselExampleControls" role="button"
+                                data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Próximo</span>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                    <div class="mb-3">
+                        <div class="row">
+                            <label for="valor" class="form-label col" name="valor">Valor desejado</label>
+                            <div class="input-group col">
+                                <span class="input-group-text" id="basic-addon1">R$</span>
+                                <input type="number" readonly class="form-control text-end" id="valorShow" value="250">
+                            </div>
+                        </div>
+                        <input type="range" class="form-range" min="80" max="3500" step="10" value="250" id="valor"
+                            oninput="this.form.valorShow.value=this.value" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <div class="row">
+                            <label for="msg" class="form-label col" name="msg">Mensagem</label>
+                            <div class="col">
+                                <p class="text-end">140</p>
+                            </div>
+                        </div>
+
+                        <textarea class="form-control" aria-label="With textarea" id="msg"></textarea>
+                    </div>
+
+
+                    <div class="mb-3 text-center">
+                        <div id="token" class="g-recaptcha text-center"
+                            data-sitekey="6LdAsBMaAAAAAMyYJP4BURKzdrRW83vkUY8gzcJJ"
+                            data-size="compact">
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <a type="button" class="btn btn-primary" role="button" target="_blank"
+                            rel="noopener noreferrer">Ir
+                            para o Mercado Pago</a>
+                    </div>
+
+
+                    <div class="text-left">
+                        <p>*As mensagens passarão pela avaliação do casal</p>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+        <div class="container-sm text-center" id="obrigado">
+            <h2>Muito Obrigado!</h2>
+        </div>
+
+        <div class="container-sm text-left" id="scibib">
+            <p>Desenvolvido por SciBib. scibib.contato@gmail.com</p>
+        </div>
+
+        <div class="container-sm" id="bottomAssets">
+
         </div>
 
 
-
-        <div id="buttonArea">
-            <button id="sendForm" class="btn btn-primary" type="button">
-                <span id="spinnerForm" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"
-                    style="visibility:hidden"></span>
-                Enviar sua mensagem
-            </button>
-
-        </div>
+    </div>
 
 
-    </form>
 
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+        crossorigin="anonymous"></script>
+    <script src="https://www.google.com/recaptcha/api.js"></script>
 </body>
-<script src="https://www.google.com/recaptcha/api.js"></script>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
-    crossorigin="anonymous"></script>
-<script src="index.js"></script>
 
 </html>

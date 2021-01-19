@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&family=Rouge+Script&display=swap');
+
+body{
+    background-color: #F3F3E8;
+    font-family: 'Raleway', sans-serif;
+    font-size: 100%;
+    font-weight: 300;
+    color: #F3F3E8;
+    line-height: 1.25;
+}
+
+h2{
+    font-family: 'Rouge Script', cursive;
+    font-size: 250%;
+    color: #071031;
+}
+
+h1{
+    font-family: 'Rouge Script', cursive;
+    font-size: 350%;
+    color: #071031;
+}
+
+
+.container-sm {
+    max-width: 540px;
+    padding: 0px;
+}
+
+#carouselExampleControls {
+    min-height: 130px;
+    align-items: center;
+    background-color: #F3F3E8;
+    border-radius: 5px;
+    margin: 18px;
+}
+
+.caixaTexto{
+    background-color: #62674A;
+    padding: 18px;
+    border-radius: 5px;
+    
+}
+
+.secao{
+    margin-bottom: 52px;
+}
+
+
+#carouselExampleControls a {
+    padding: 10px;
+}
+
+.carousel-inner {
+    padding: 0px 50px;
+}
+
+.carousel-item div{
+    padding: 0px;
+}
+
+.carousel-item div p {
+    margin: 0px;
+    color: #071031;
+    font-size: 100%;
+    font-weight: bold;
+}
+
+.percDomestico {
+    font-size: 190% !important;
+
+}
+
+.item-lista img {
+    max-width: 80px;
+    max-height: 85px;
+}
+
+
+.g-recaptcha {
+    display: inline-block;
+}
+
+#scibib p{
+    margin: 0px !important;
+    color: #071031;
+    
+
+}
