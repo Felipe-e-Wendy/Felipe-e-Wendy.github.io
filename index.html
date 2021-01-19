@@ -17,17 +17,32 @@
 
 <body>
     <div class="container-sm" id="container">
-        <div class="container-sm" id="topAssets">
+        <div class="container-sm row" id="topAssets">
+            <div class="col">
+                <img src="assets\Folha top.svg" alt="Folhas de árvore">
+            </div>
 
+            <div id="ceu" class="col">
+                <img src="assets\ceu.svg" alt="Céu">
+            </div>
         </div>
         <div class="container-sm text-center" id="nomeCasal">
             <h1>Felipe & Wendy</h1>
         </div>
 
         <div class="secao container-sm text-center" id="nossaHistoria">
-            <div id="assetCasal container-sm"></div>
-            <h2>Nossa História</h2>
-            <div id="assetPlanta"></div>
+            <div class="row align-items-end" id="primeiroTitulo">
+                <div class="col p-0" id="assetCasal">
+                    <img src="assets\Casal.svg" alt="Casal">
+                </div>
+                <div class="col p-0" id="nossaHistoria">
+                    <h2>Nossa História</h2>
+                </div>                
+                <div  class="col p-0 justify-content-end" id="assetPlanta col">
+                    <img src="assets\planta.svg" alt="planta">
+                </div>
+            </div>
+
 
             <div class="caixaTexto container-sm">
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ut elit sit amet erat sagittis
@@ -59,8 +74,13 @@
                     </div>
 
                     <div id="google-maps">
-                        <iframe
+                        <!-- <iframe
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3984.484933099095!2d-60.10235718571582!3d-2.9628592405872407!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x926c3df421b35a11%3A0xdc386916479258b8!2sCh%C3%A1cara%20Monte%20Rey!5e0!3m2!1spt-BR!2sbr!4v1611004634514!5m2!1spt-BR!2sbr"
+                            width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen=""
+                            aria-hidden="false" tabindex="0"></iframe> -->
+
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d233830.9157993699!2d-60.042157099479304!3d-3.017097947790792!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x926c3df421b35a11%3A0xdc386916479258b8!2sCh%C3%A1cara%20Monte%20Rey!5e0!3m2!1spt-BR!2sbr!4v1611094222142!5m2!1spt-BR!2sbr"
                             width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen=""
                             aria-hidden="false" tabindex="0"></iframe>
                     </div>
@@ -84,8 +104,7 @@
                 <p>Não compartilhamento de objetos de uso pessoal (talheres, pratos, copos, etc.).</p>
 
                 <a href="https://coronavirus.saude.gov.br/sobre-a-doenca#como-se-proteger" type="button"
-                    class="btn btn-primary align-self-center" role="button" target="_blank"
-                    rel="noopener noreferrer">Mais
+                    class="btn btn-light align-self-center" role="button" target="_blank" rel="noopener noreferrer">Mais
                     informações</a>
             </div>
         </div>
@@ -102,31 +121,33 @@
                 </div>
 
 
-                <form class="container-sm" name="myForm" data-bs-interval="1">
+                <form class="container-sm" id="myForm">
 
                     <div class="mb-3">
-                        <label for="nome" class="form-label" name="nome">Nome</label>
-                        <input type="text" class="form-control" id="nome" placeholder="Ex.: José Silva" required>
+                        <label for="name" class="form-label">Nome</label>
+                        <input type="text" class="form-control" id="name" placeholder="Ex.: José Silva" maxlength="25"
+                            required>
                     </div>
 
                     <div class="mb-3">
                         <label for="wpp" class="form-label" name="wpp">WhatsApp</label>
-                        <input type="text" class="form-control" placeholder="Ex.: (00) 00000-0000" required>
+                        <input id="wpp" type="text" class="form-control" placeholder="Ex.: (00) 00000-0000"
+                            minlength="15" maxlength="15" required>
                     </div>
 
-                    <div class="mb-3 h-100">
-                        <p>Você nos ajudou a comprar: </p>
+                    <div class="mb-3">
+                        <p id="msgAjuda">Você nos ajuda a comprar: </p>
 
                         <div id="carouselExampleControls" class="mb-3 carousel carousel-dark slide row"
-                            data-bs-ride="carousel" data-bs-interval="100000000000">
+                            data-bs-ride="carousel" data-bs-interval="3000">
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
                                     <div class="row text-center align-items-center">
                                         <div class="col item-lista">
-                                            <img src="assets\geladeira.svg" class="d-block w-100" alt="Geladeira">
+                                            <img src="assets\geladeira.svg" class="d-block" alt="Geladeira">
                                         </div>
                                         <div class="col">
-                                            <p class="percDomestico" id="percGeladeira">100 %</p>
+                                            <p class="percDomestico" id="geladeira">100 %</p>
                                             <p>de nossa Geladeira</p>
                                         </div>
                                     </div>
@@ -135,10 +156,10 @@
                                 <div class="carousel-item">
                                     <div class="row text-center align-items-center">
                                         <div class="col item-lista">
-                                            <img src="assets\fogao.svg" class="d-block w-100" alt="Fogão">
+                                            <img src="assets\fogao.svg" class="d-block" alt="Fogão">
                                         </div>
                                         <div class="col">
-                                            <p class="percDomestico" id="percFogao">100 %</p>
+                                            <p class="percDomestico" id="fogao">100 %</p>
                                             <p>de nosso Fogão</p>
                                         </div>
                                     </div>
@@ -147,10 +168,10 @@
                                 <div class="carousel-item">
                                     <div class="row text-center align-items-center">
                                         <div class="col item-lista">
-                                            <img src="assets\maqlavar.svg" class="d-block w-100" alt="Maquina de Lavar">
+                                            <img src="assets\maqlavar.svg" class="d-block" alt="Maquina de Lavar">
                                         </div>
                                         <div class="col">
-                                            <p class="percDomestico" id="percMaqLavar">100 %</p>
+                                            <p class="percDomestico" id="maqLavar">100 %</p>
                                             <p>de nossa Maquina de lavar</p>
                                         </div>
                                     </div>
@@ -159,10 +180,10 @@
                                 <div class="carousel-item">
                                     <div class="row text-center align-items-center">
                                         <div class="col item-lista">
-                                            <img src="assets\tv.svg" class="d-block w-100" alt="Televisão">
+                                            <img src="assets\tv.svg" class="d-block" alt="Televisão">
                                         </div>
                                         <div class="col">
-                                            <p class="percDomestico" id="percTelevisao">100 %</p>
+                                            <p class="percDomestico" id="tv">100 %</p>
                                             <p>de nossa Televisão</p>
                                         </div>
                                     </div>
@@ -186,13 +207,13 @@
 
                     <div class="mb-3">
                         <div class="row">
-                            <label for="valor" class="form-label col" name="valor">Valor desejado</label>
-                            <div class="input-group col">
+                            <label for="price" class="form-label col" name="price">Valor desejado</label>
+                            <div class="input-group col text-left" id="displayPrice">
                                 <span class="input-group-text" id="basic-addon1">R$</span>
                                 <input type="number" readonly class="form-control text-end" id="valorShow" value="250">
                             </div>
                         </div>
-                        <input type="range" class="form-range" min="80" max="3500" step="10" value="250" id="valor"
+                        <input type="range" class="form-range" min="80" max="3500" step="10" value="250" id="price"
                             oninput="this.form.valorShow.value=this.value" required>
                     </div>
 
@@ -204,25 +225,28 @@
                             </div>
                         </div>
 
-                        <textarea class="form-control" aria-label="With textarea" id="msg"></textarea>
+                        <textarea class="form-control" aria-label="With textarea" id="msg" maxlength="140"></textarea>
                     </div>
 
+                    <div class="alert alert-warning visually-hidden" role="alert">
+                        Verifique se você é um robô!
+                    </div>
 
                     <div class="mb-3 text-center">
                         <div id="token" class="g-recaptcha text-center"
-                            data-sitekey="6LdAsBMaAAAAAMyYJP4BURKzdrRW83vkUY8gzcJJ"
-                            data-size="compact">
+                            data-sitekey="6LdAsBMaAAAAAMyYJP4BURKzdrRW83vkUY8gzcJJ">
                         </div>
                     </div>
+
+
                     <div class="text-center">
-                        <a type="button" class="btn btn-primary" role="button" target="_blank"
-                            rel="noopener noreferrer">Ir
-                            para o Mercado Pago</a>
+                        <input type="submit" class="btn btn-light" role="button" target="_blank"
+                            rel="noopener noreferrer" value="Ir para Mercado Pago">
                     </div>
 
 
                     <div class="text-left">
-                        <p>*As mensagens passarão pela avaliação do casal</p>
+                        <p id="aviso">*As mensagens passarão pela avaliação do casal</p>
                     </div>
 
                 </form>
@@ -233,24 +257,30 @@
             <h2>Muito Obrigado!</h2>
         </div>
 
-        <div class="container-sm text-left" id="scibib">
-            <p>Desenvolvido por SciBib. scibib.contato@gmail.com</p>
-        </div>
 
-        <div class="container-sm" id="bottomAssets">
+        <div class="container-sm row align-items-end" id="bottomAssets">
+
+            <div class="container-sm text-left col" id="scibib">
+                <p>Desenvolvido por SciBib. scibib.contato@gmail.com</p>
+            </div>
+
+            <div class="col" id="folhaBot">
+                <img src="assets\Folha bot.svg" alt="Folhas de árvore">
+            </div>
 
         </div>
 
 
     </div>
 
-
-
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
         crossorigin="anonymous"></script>
+
+    <script type="module" src="index.js"></script>
+
     <script src="https://www.google.com/recaptcha/api.js"></script>
+
 </body>
 
 </html>
