@@ -1,4 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&family=Rouge+Script&display=swap');
+
+
+*{
+    overflow-x: hidden !important;
+}
+
+body div {
+    overflow-y: hidden !important;
+}
+
 body {
     background-color: #F3F3E8;
     font-family: 'Raleway', sans-serif;
@@ -30,7 +40,7 @@ h1 {
     align-items: center;
     background-color: #F3F3E8;
     border-radius: 5px;
-    margin: 18px;
+    margin: auto;
 }
 
 .caixaTexto {
@@ -83,14 +93,9 @@ h1 {
     /* margin-left: 15% !important; */
 }
 
-.g-recaptcha {
-    display: inline-block;
-}
-
 #scibib p {
     margin: 0px !important;
     color: #071031;
-    /* max-width: 50%; */
     font-size: 80%;
 }
 
@@ -100,7 +105,6 @@ h1 {
 }
 
 #displayPrice {
-    /* margin-left: 18px; */
     max-width: 170px;
 }
 
@@ -152,7 +156,7 @@ input[type=range]::-webkit-slider-thumb {
 
 #ceu img{
     margin-top: 50px;
-    width: 100%;
+    /* width: 100%; */
 }
 
 #nomeCasal{
@@ -178,5 +182,9 @@ input[type=range]::-webkit-slider-thumb {
 
 #google-maps iframe{
     height: 200px;
+}
+
+.carousel-item div div{
+    max-width: 45%;
 }
 
