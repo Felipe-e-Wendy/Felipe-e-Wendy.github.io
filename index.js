@@ -1,5 +1,5 @@
 const url_api = 'https://felipe-e-wendy.herokuapp.com/'  // 'http://localhost:8000/'
-const url_api_endpoint_msg = url_api + "msg"
+const endpoint_msg = "msg"
 
 const prices = {
     "geladeira": 4000,
@@ -46,7 +46,7 @@ const print_error = (error) => {
 }
 
 const active_api = async () => {
-    fetch(url_api, {
+    await fetch(url_api, {
         method: 'GET'
     }).then((response) => {
         if (response.ok) {
@@ -61,8 +61,8 @@ const active_api = async () => {
 }
 
 
-const send_form = async (data) => {
-    const response = await fetch(url_api_endpoint_msg, {
+const sendPOST = async ({ data, endpoint }) => {
+    const response = await fetch(url_api + endpoint, {
         method: 'POST',
         body: JSON.stringify(data),
         headers: {
@@ -91,43 +91,52 @@ const calcPerc = (valor) => {
 }
 
 
-active_api()
-calcPerc(document.getElementById("price").value)
-
-if (window.screen.width < 375) {
-    const token = document.getElementById("token").setAttribute("data-size", "compact")
-}
-
-
-// document.getElementById("price").addEventListener("touchmove", ({target}) => { calcPerc(target.value) })
-document.getElementById("price").addEventListener("input", ({ target }) => { calcPerc(target.value) })
-
-
-
-document.getElementById("myForm").addEventListener("submit", e => { onSubmit(e) })
-const onSubmit = (event) => {
-    event.preventDefault()
+function enviarForm() {
     const obj = getFormObj()
     if (obj["token"] === "") {
         showAlert()
     } else {
-        send_form(obj).then(() => {
+        sendPOST({ "data": obj, "endpoint": endpoint_msg }).then((response) => {
             alert("Mensagem Enviada")
             document.getElementById("myForm").reset()
             calcPerc(document.getElementById("price").value)
+            console.log(response)
         }
         )
     }
-
 }
 
-document.getElementById("wpp").addEventListener("keypress", e => { mask_wpp(e.target.value) })
+function onSubmit(event) {
+    event.preventDefault()
+    grecaptcha.execute()
+}
+
+
+active_api()
+calcPerc(document.getElementById("price").value)
+
+// if (window.screen.width < 375) {
+//     const token = document.getElementById("token").setAttribute("data-size", "compact")
+// }
+
+
+document.getElementById("price").addEventListener("input", ({ target }) => { calcPerc(target.value) })
+
+
+document.getElementById("myForm").addEventListener("submit", onSubmit)
+
+
+document.getElementById("wpp").addEventListener("input", e => { mask_wpp(e.target.value) })
 const mask_wpp = (valor) => {
     valor = valor.replace(/\D/g, "")
     valor = valor.replace(/^(\d{2})(\d)/g, "($1) $2")
     valor = valor.replace(/(\d)(\d{4})$/, "$1-$2")
     wpp.value = valor
 }
+
+document.getElementById("msg").addEventListener("input", e => {
+    document.getElementById("numberChar").textContent = 140 - e.target.value.length
+})
 
 
 // const url_api = 'https://felipe-e-wendy.herokuapp.com/'  // 'http://localhost:8000/'
