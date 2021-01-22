@@ -82,15 +82,15 @@ const resetForm = () => {
     calcPerc(price.value)
 }
 
-function enviarForm() {
+async function enviarForm() {
     const obj = getFormObj()
-    sendPOST({ "data": obj, "endpoint": endpoint_msg })
-        .then(({ url_pagamento }) => {
-            resetForm()
-            grecaptcha.reset()
-            window.open(url_pagamento)
-
-        })
+    await sendPOST({ "data": obj, "endpoint": endpoint_msg })
+    .then(({ payment_url }) => {
+        window.open(payment_url)
+        grecaptcha.reset()
+        myForm.reset()
+    })
+    .catch(print_error)
 }
 
 myForm.addEventListener("submit", event =>{
